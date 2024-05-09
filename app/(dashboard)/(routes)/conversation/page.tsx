@@ -48,7 +48,7 @@ const ConversationPage = () => {
                                 render={({field}) => (
                                     <FormItem className="col-span-12 lg:col-span-10">
                                         <FormControl className="m-0 p-0">
-                                            <Input 
+                                            <Input
                                                 className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                                                 disabled={isLoading}
                                                 placeholder="Challenge ssTAi with a prompt"
