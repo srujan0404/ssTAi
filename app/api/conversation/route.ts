@@ -1,12 +1,12 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-import { Configuration, GeminiApi } from "";
+import { Configuration, OpenAIApi } from "openai"
 
 const configuration = new Configuration({
-    apiKey: process.env.GEMINI_AI_KEY
+    apiKey: process.env.OPEN_AI_KEY
 });
 
-const gemini = new GeminiApi(configuration);
+const openai = new OpenAIApi(configuration);
 
 export async function Post(
     req: Request
@@ -21,17 +21,18 @@ export async function Post(
         }
 
         if(!configuration.apiKey){
-            return new NextResponse("Gemini AI key is not configured", {status: 500})
+            return new NextResponse("Open AI key is not configured", {status: 500})
         }
 
         if(!messages){
             return new NextResponse("Messages are required", {status: 400});
         }
 
-        const response = await gemini.createChatCompletion({
-            model: "gemini-1.5-pro", 
+        const response = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo", 
             messages
         });
+
 
         return NextResponse.json(response.data.choices[0].message);
 
