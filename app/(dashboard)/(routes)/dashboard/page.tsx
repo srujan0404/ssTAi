@@ -54,7 +54,7 @@ const Landing = () => {
           Dive into the capabilities of AI
         </h2>
         <p className="text-muted-foreground font-light text-sm md:text-lg text-center">
-          Chat with smartest AI - Experience the power Of AI
+          Explore with smartest AI - Experience the power Of AI
         </p>
       </div>
       <div className="px-4 md:px-20 lg:px-32 space-y-4">
