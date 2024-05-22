@@ -11,7 +11,7 @@ export const Loader = () => {
                 />
             </div>
             <p className="text-sm text-muted-foreground"> 
-                ssTAi is Waiting please Wait!
+                ssTAi is Thinking please Wait!
             </p>
         </div>
     )
