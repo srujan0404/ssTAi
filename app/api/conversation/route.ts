@@ -21,11 +21,11 @@ export async function Post(
         }
 
         if(!configuration.apiKey){
-            return new NextResponse("Open AI key is not configured", {status: 500})
+            return new NextResponse("Open AI key is not configured, please try again", {status: 500})
         }
 
         if(!messages){
-            return new NextResponse("Messages are required", {status: 400});
+            return new NextResponse("Messages are required for a prompt", {status: 400});
         }
 
         const response = await openai.createChatCompletion({
