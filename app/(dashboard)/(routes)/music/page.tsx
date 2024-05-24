@@ -22,7 +22,7 @@ import { Loader } from "@/components/loader";
 const MusicPage = () => {
 
     const router = useRouter();
-    const [music, setMusic] = useState<string>([]);
+    const [music, setMusic] = useState<string>();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -36,19 +36,11 @@ const MusicPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const userMessage: ChatCompletionRequestMessage = {
-                role: "user",
-                content: values.prompt,
-            };
-            const newMessages = [...messages, userMessage];
-            
+            setMusic(undefined);
 
-            const response = await axios.post("/api/conversation", {
-                messages: newMessages,  
-            });
+            const response = await axios.post("/api/music", values);
 
-            setMessages((current) => [...current, userMessage, response.data]);
-
+            setMusic(response.data.audio);
             form.reset();
         } catch (error: any) {
             console.log(error);
@@ -103,7 +95,7 @@ const MusicPage = () => {
                 <Loader />
               </div>
             )}
-            {messages.length === 0 && !isLoading && (
+            {!music && !isLoading && (
               <Empty label="No music is generated" />
             )}
             <div>
