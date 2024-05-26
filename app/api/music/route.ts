@@ -17,7 +17,7 @@ export async function Post(
         const {messages} = body;
 
         if(!userId) {
-            return new NextResponse("Unauthorized", {status: 401});
+            return new NextResponse("UnAuthorized", {status: 401});
         }
 
         if(!configuration.apiKey){
