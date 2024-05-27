@@ -7,11 +7,11 @@ const Landing = () => {
         Landing Page (Unprotected)
         <div>
           <Link href="/sign-in">
-            <Button className="bg-black w-1">Login</Button>
+            <Button>Login</Button>
           </Link>
 
           <Link href="/sign-up">
-            <Button className="h-1">Register</Button>
+            <Button>Register</Button>
           </Link>
         </div>
       </div>
