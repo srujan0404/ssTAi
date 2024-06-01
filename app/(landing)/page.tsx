@@ -5,17 +5,17 @@ const Landing = () => {
     return (
       <div>
         Landing Page (Unprotected)
-        <div>
+        <div className="flex flex-row">
           <Link href="/sign-in">
-            <Button className="w-full">Login</Button>
+            <Button className="w-56 rounded-lg ml-5">Login</Button>
           </Link>
 
           <Link href="/sign-up">
-            <Button className="w-full">Register</Button>
+            <Button className="w-56 rounded-lg ml-3">Register</Button>
           </Link>
         </div>
       </div>
     );
-}
+} 
 
 export default Landing;
