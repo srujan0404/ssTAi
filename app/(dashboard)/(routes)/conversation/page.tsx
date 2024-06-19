@@ -96,7 +96,7 @@ const ConversationPage = () => {
                   className="col-span-12 lg:col-span-2 w-full rounded-sm"
                   disabled={isLoading}
                 >
-                  Generate
+                  Exlpain
                 </Button>
               </form>
             </Form>
